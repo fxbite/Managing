@@ -8,7 +8,7 @@
 <section class="register-photo">
     <div class="form-container">
         <form method="post">
-            <h2 class="text-center"><strong>@ViewBag.Title.</strong></h2>
+            <h2 class="text-center"><strong>@ViewBag.Title</strong></h2>
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()

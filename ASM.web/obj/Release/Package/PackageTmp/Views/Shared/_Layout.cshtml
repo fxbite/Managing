@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ASM</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -18,19 +18,22 @@
     <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/style.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Content/js/vanilla-zoom.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar">
         <div class="container">
-            <p class="navbar-brand logo nav-item text-black">FPT Education Manager</p><button data-bs-toggle="collapse" class="navbar-toggler gradient" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <p class="navbar-brand logo nav-item text-black">FPT Managing System</p><button data-bs-toggle="collapse" class="navbar-toggler gradient" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home")
                     @if ((User.IsInRole("Trainee")) || (User.IsInRole("Trainer")))
                     {
-                        <li class="nav-item">@Html.ActionLink("Course Assigned", "CourseAssigned", "Train")</li>
-                        <li class="nav-item">@Html.ActionLink("Course Available", "Course", "Train")</li>
-                    }
+                    <li class="nav-item">@Html.ActionLink("Course Assigned", "CourseAssigned", "Train")</li>
+                    <li class="nav-item">@Html.ActionLink("Course Available", "Course", "Train")</li>
+                }
                     @if (User.IsInRole("TrainingStaff"))
                     {
                         <li class="nav-item">@Html.ActionLink("Course", "Course", "TrainingStaff")</li>
@@ -52,7 +55,7 @@
     <div class="content mt-lg-5">
         @RenderBody()
         <footer class="mt-lg-5">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Copyright of FPT Education</p>
         </footer>
     </div>
     <script src="~/Content/js/theme.js"></script>

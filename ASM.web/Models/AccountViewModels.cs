@@ -65,13 +65,13 @@ namespace ASM.web.Models
 
     public class RegisterViewModel
     {
-        [Display(Name = "FullName")]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
         [Display(Name = "Age")]
         public int Age { get; set; }
 
-        [Display(Name = "DateofBirth")]
+        [Display(Name = "Date of Birth")]
         public DateTime DateofBirth { get; set; }
 
         [StringLength(100, ErrorMessage = "Education error")]
